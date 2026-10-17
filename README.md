@@ -63,16 +63,3 @@ PureNotes preserves the complete feature set and data compatibility of the origi
 | `Alt + N` | Create a new note |
 | `Alt + Z` | Toggle distraction-free Zen Mode |
 | `Esc` | Close active modal, drawer, or Command Palette |
-
-## Tech Stack
-
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Core Application** | HTML5, CSS3, Vanilla JavaScript (ES6+) | Zero-build, framework-free single-page workspace architecture |
-| **Styling & Theme** | Tailwind CSS (CDN) + Custom CSS (`style.css`) | Warm Amber & Obsidian dark/light design system and responsive layout |
-| **Typography & Icons** | Google Fonts (`Inter`, `Montserrat`, `Outfit`, `Fira Code`), FontAwesome 6, Custom SVG | Customizable editor typography and crisp vector iconography |
-| **Markdown & Sanitization** | Marked.js (`v14.1.4`) + DOMPurify (`v3.2.4`) | Fast GFM parsing and strict XSS sanitization |
-| **Python Execution** | Skulpt (`v1.2.0`) | In-browser Python 3 execution inside Markdown code blocks |
-| **Cryptography** | Web Crypto API (`SubtleCrypto`) | Client-side `PBKDF2` + `AES-256-GCM` note encryption and decryption |
-| **Offline & PWA** | Web App Manifest (`manifest.json`) + Service Worker (`sw.js`) | Standalone desktop/mobile installation and offline-first asset caching |
-| **Cloud Sharing (Optional)** | Cloudflare Pages Functions + Cloudflare KV | Read-only `/s/[id]` shared note links and `/api/share` persistence |
