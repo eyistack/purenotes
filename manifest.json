@@ -1,0 +1,30 @@
+{
+  "name": "PureNotes",
+  "short_name": "PureNotes",
+  "description": "A completely private, local-first markdown workspace. Zero cloud, zero tracking, purely yours.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#f59e0b",
+  "background_color": "#0a0a0a",
+  "categories": [
+    "productivity",
+    "utilities",
+    "developer tools"
+  ],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjUuNSIgZmlsbD0iIzE4MTgxYiIvPjxyZWN0IHg9IjUiIHk9IjQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNiIgcng9IjIuNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEuNiIvPjxsaW5lIHgxPSI4IiB5MT0iOC41IiB4Mj0iMTUiIHkyPSI4LjUiIHN0cm9rZT0iI2Y0ZjRmNSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI4IiB5MT0iMTIiIHgyPSIxMi41IiB5Mj0iMTIiIHN0cm9rZT0iI2ExYTFhYSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjE0LjIiIHk9IjEwLjYiIHdpZHRoPSIxLjgiIGhlaWdodD0iMyIgcng9IjAuNiIgZmlsbD0iI2Y1OWUwYiIvPjxsaW5lIHgxPSI4IiB5MT0iMTUuNSIgeDI9IjEzIiB5Mj0iMTUuNSIgc3Ryb2tlPSIjNzE3MTdhIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjUuNSIgZmlsbD0iIzE4MTgxYiIvPjxyZWN0IHg9IjUiIHk9IjQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNiIgcng9IjIuNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEuNiIvPjxsaW5lIHgxPSI4IiB5MT0iOC41IiB4Mj0iMTUiIHkyPSI4LjUiIHN0cm9rZT0iI2Y0ZjRmNSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI4IiB5MT0iMTIiIHgyPSIxMi41IiB5Mj0iMTIiIHN0cm9rZT0iI2ExYTFhYSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjE0LjIiIHk9IjEwLjYiIHdpZHRoPSIxLjgiIGhlaWdodD0iMyIgcng9IjAuNiIgZmlsbD0iI2Y1OWUwYiIvPjxsaW5lIHgxPSI4IiB5MT0iMTUuNSIgeDI9IjEzIiB5Mj0iMTUuNSIgc3Ryb2tlPSIjNzE3MTdhIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

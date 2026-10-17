@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PureNotes — Private, Local-First Workspace</title>
+  <meta name="description"
+    content="A completely private, local-first markdown workspace. Zero cloud, zero tracking, purely yours.">
+  <meta property="og:title" content="PureNotes — Private, Local-First Workspace">
+  <meta property="og:description"
+    content="A completely private, local-first markdown workspace. Zero cloud, zero tracking, purely yours.">
+  <meta name="theme-color" content="#f59e0b">
+  <meta name="apple-mobile-web-app-title" content="PureNotes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjUuNSIgZmlsbD0iIzE4MTgxYiIvPjxyZWN0IHg9IjUiIHk9IjQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNiIgcng9IjIuNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEuNiIvPjxsaW5lIHgxPSI4IiB5MT0iOC41IiB4Mj0iMTUiIHkyPSI4LjUiIHN0cm9rZT0iI2Y0ZjRmNSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI4IiB5MT0iMTIiIHgyPSIxMi41IiB5Mj0iMTIiIHN0cm9rZT0iI2ExYTFhYSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjE0LjIiIHk9IjEwLjYiIHdpZHRoPSIxLjgiIGhlaWdodD0iMyIgcng9IjAuNiIgZmlsbD0iI2Y1OWUwYiIvPjxsaW5lIHgxPSI4IiB5MT0iMTUuNSIgeDI9IjEzIiB5Mj0iMTUuNSIgc3Ryb2tlPSIjNzE3MTdhIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjUuNSIgZmlsbD0iIzE4MTgxYiIvPjxyZWN0IHg9IjUiIHk9IjQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNiIgcng9IjIuNSIgZmlsbD0iIzI3MjcyYSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEuNiIvPjxsaW5lIHgxPSI4IiB5MT0iOC41IiB4Mj0iMTUiIHkyPSI4LjUiIHN0cm9rZT0iI2Y0ZjRmNSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI4IiB5MT0iMTIiIHgyPSIxMi41IiB5Mj0iMTIiIHN0cm9rZT0iI2ExYTFhYSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxyZWN0IHg9IjE0LjIiIHk9IjEwLjYiIHdpZHRoPSIxLjgiIGhlaWdodD0iMyIgcng9IjAuNiIgZmlsbD0iI2Y1OWUwYiIvPjxsaW5lIHgxPSI4IiB5MT0iMTUuNSIgeDI9IjEzIiB5Mj0iMTUuNSIgc3Ryb2tlPSIjNzE3MTdhIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+">
+
+  <!-- Google Fonts: Inter, Montserrat, Outfit, Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['Fira Code', 'Consolas', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <base href="/" />
+
+  <!-- Prevent FOUC: apply saved theme & shared-route class before paint -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('workspace_theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const p = window.location.pathname || '';
+      const s = window.location.search || '';
+      const h = window.location.hash || '';
+      if (p.startsWith('/s/') || /[?&](s|share)=/.test(s) || h.startsWith('#share=')) {
+        document.documentElement.classList.add('is-shared-route');
+      }
+    })();
+  </script>
+
+  <!-- External Libraries via CDN -->
+  <!-- Marked.js (Markdown parser) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@14.1.4/marked.min.js"></script>
+  <!-- DOMPurify (HTML sanitizer) -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+  <!-- Skulpt (In-browser Python interpreter) -->
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Extracted Stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body
+  class="is-home-view h-full bg-slate-50 dark:bg-black text-slate-800 dark:text-slate-100 antialiased selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:bg-indigo-500/30 dark:selection:text-indigo-300">
+
+  <!-- SVG Symbols Definition -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" style="display: none;" aria-hidden="true">
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+    </symbol>
+    <symbol id="i-folder-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+      <line x1="12" y1="11" x2="12" y2="17"></line>
+      <line x1="9" y1="14" x2="15" y2="14"></line>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2"></path>
+      <path d="M12 20v2"></path>
+      <path d="m4.93 4.93 1.41 1.41"></path>
+      <path d="m17.66 17.66 1.41 1.41"></path>
+      <path d="M2 12h2"></path>
+      <path d="M20 12h2"></path>
+      <path d="m6.34 17.66-1.41 1.41"></path>
+      <path d="m19.07 4.93-1.41 1.41"></path>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+    </symbol>
+  </svg>
+
+  <!-- ═══ LAYOUT SHELL ═══════════════════════════════════════════════════════ -->
+  <div id="app" class="flex h-full overflow-hidden relative">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div id="sidebar-overlay"
+      class="fixed inset-0 z-40 bg-black/40 dark:bg-black/70 backdrop-blur-sm overlay-hidden lg:hidden"
+      aria-hidden="true"></div>
+
+    <!-- ─── SIDEBAR ───────────────────────────────────────────────────────── -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-40 flex flex-col w-72 sm:w-80
+                  bg-white dark:bg-[#070707] border-r border-slate-200 dark:border-white/[0.06]
+                  shadow-xl lg:shadow-none sidebar-hidden
+                  lg:!transform-none lg:!opacity-100 lg:!pointer-events-auto select-none"
+      aria-label="PureNotes Sidebar">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between px-3.5 py-3 border-b border-slate-100 dark:border-white/[0.06]">
+        <div id="brand-logo-container" role="button" tabindex="0" onclick="goHome()"
+          class="flex items-center gap-2.5 cursor-pointer select-none group focus:outline-none"
+          title="PureNotes — All Notes Home">
+          <div class="logo transition">
+            <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4.5" y="3.5" width="15" height="17" rx="2.5" stroke="currentColor" stroke-width="1.75" />
+              <line x1="8" y1="8.5" x2="15" y2="8.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+              <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+              <rect class="logo-cursor" x="13.8" y="10.8" width="2" height="3.4" rx="0.6" fill="var(--accent-primary)" />
+              <line x1="8" y1="16.5" x2="11" y2="16.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" opacity="0.55" />
+            </svg>
+          </div>
+          <span class="sidebar-label text-sm font-semibold tracking-tight text-slate-900 dark:text-white">PureNotes</span>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <!-- Sidebar Collapse Toggle Button -->
+          <button id="btn-toggle-sidebar-collapse"
+            class="flex items-center justify-center w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition"
+            aria-label="Collapse Sidebar" title="Collapse / Expand Sidebar">
+            <span id="collapse-icon" class="inline-flex items-center justify-center"><svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="11 17 6 12 11 7"/><polyline points="18 17 13 12 18 7"/></svg></span>
+          </button>
+          <!-- Theme Toggle Button (Premium SVG Sun & Moon Icons) -->
+          <button id="btn-theme"
+            class="theme-toggle-btn relative flex items-center justify-center w-7 h-7 rounded-lg text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition"
+            aria-label="Toggle Dark / Light Theme" title="Toggle Theme (Light / OLED Dark)">
+            <svg id="theme-icon-sun" class="theme-svg-icon sun-icon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg id="theme-icon-moon" class="theme-svg-icon moon-icon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+          <!-- Close Mobile Sidebar -->
+          <button id="btn-close-sidebar"
+            class="lg:hidden flex items-center justify-center w-7 h-7 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition"
+            aria-label="Close sidebar">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Buttons: New Note + New Folder (Shrunk & Compact) -->
+      <div class="p-2 space-y-1.5 border-b border-slate-100 dark:border-white/[0.06]">
+        <div class="grid grid-cols-2 gap-1.5">
+          <button id="btn-new-note" class="btn-sidebar-action flex items-center justify-center gap-1.5 px-2 py-1 rounded-lg
+                         bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98]
+                         text-white text-[11px] font-medium shadow-xs shadow-indigo-600/20 transition duration-150 h-7"
+            title="Create Note">
+            <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> <span class="sidebar-label">Note</span>
+          </button>
+          <button id="btn-new-folder" class="btn-sidebar-action flex items-center justify-center gap-1.5 px-2 py-1 rounded-lg
+                         bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.1]
+                         text-slate-700 dark:text-slate-200 text-[11px] font-medium transition duration-150 h-7"
+            title="Create Folder">
+            <svg class="ic">
+              <use href="#i-folder" />
+            </svg> <span class="sidebar-label">Folder</span>
+          </button>
+        </div>
+
+        <!-- Quick Search & Command Palette trigger -->
+        <button id="btn-cmd-palette-trigger"
+          class="w-full flex items-center justify-between px-2.5 py-1 rounded-lg h-7
+                       bg-slate-50 dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/[0.06]
+                       text-[11px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-white/[0.12] transition"
+          title="Search (⌘K)">
+          <span class="flex items-center gap-1.5 truncate">
+            <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span class="sidebar-label truncate">Search or cmd…</span>
+          </span>
+          <kbd
+            class="sidebar-label px-1 py-0.2 rounded text-[9px] bg-slate-200/60 dark:bg-white/[0.08] text-slate-500 dark:text-slate-400 font-mono">⌘K</kbd>
+        </button>
+      </div>
+
+      <!-- Sidebar Navigation Views -->
+      <div id="sidebar-nav-views"
+        class="px-2 py-1.5 border-b border-slate-100 dark:border-white/[0.06] flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400">
+        <!-- View selector pills -->
+        <div class="flex items-center gap-1 flex-1">
+          <button id="nav-all-notes"
+            class="px-2 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs"
+            title="All Notes">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span class="sidebar-label ml-1">All</span>
+          </button>
+          <button id="nav-favorites" class="px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-white/[0.06] text-xs"
+            title="Favorites">
+            <svg class="lucide-svg w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><span class="sidebar-label ml-1">Favs</span>
+          </button>
+          <button id="nav-trash" class="px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-white/[0.06] text-xs"
+            title="Trash">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span class="sidebar-label ml-1">Trash <span id="trash-badge"
+                class="opacity-75">(0)</span></span>
+          </button>
+        </div>
+
+        <!-- Bulk Selection Mode Toggle -->
+        <button id="btn-toggle-bulk" class="p-1 rounded text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+          title="Toggle Bulk Selection Mode">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        </button>
+      </div>
+
+      <!-- Folders & Tags Collapsible Bar -->
+      <div class="px-2.5 pt-1.5 pb-1 space-y-1">
+        <!-- Folder Filter dropdown / tree toggle -->
+        <div
+          class="folders-header flex items-center justify-between text-[11px] text-slate-400 dark:text-slate-500 px-1">
+          <span class="sidebar-label uppercase tracking-wider font-semibold text-[10px]">Folders</span>
+          <button id="btn-collapse-folders" class="hover:text-slate-700 dark:hover:text-slate-300">
+            <svg id="folders-chevron" class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div id="folders-tree" class="space-y-0.5 max-h-36 overflow-y-auto pr-1"></div>
+
+        <!-- Tag Filter -->
+        <div class="tag-filter-container relative pt-0.5">
+          <svg class="lucide-svg w-3 h-3 absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+          <select id="tag-filter-select" class="w-full pl-6 pr-3 py-1 rounded-lg appearance-none cursor-pointer
+                         bg-slate-100 dark:bg-white/[0.05]
+                         border border-transparent focus:border-indigo-400
+                         text-[11px] text-slate-600 dark:text-slate-300 transition">
+            <option value="">Filter by tag (All)</option>
+          </select>
+          <svg class="lucide-svg w-3 h-3 absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+
+      <!-- Notes List -->
+      <div class="flex-1 overflow-y-auto px-2 py-1 space-y-1" id="notes-list-container">
+        <nav id="notes-list" class="space-y-1" aria-label="Notes"></nav>
+      </div>
+
+      <!-- Bulk Actions Bottom Drawer (Hidden unless bulk mode active) -->
+      <div id="bulk-action-bar"
+        class="hidden p-2.5 border-t border-indigo-200 dark:border-indigo-500/20 bg-indigo-50/70 dark:bg-indigo-950/20 space-y-2">
+        <div class="flex items-center justify-between text-xs font-medium text-indigo-700 dark:text-indigo-300">
+          <span id="bulk-selected-count">0 selected</span>
+          <div class="flex gap-2">
+            <button id="btn-bulk-select-all" class="text-[11px] underline">Select All</button>
+            <button id="btn-bulk-cancel" class="text-[11px] opacity-75">Cancel</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btn-bulk-move-folder"
+            class="px-2 py-1 rounded-lg bg-white dark:bg-white/[0.08] text-xs font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/[0.08] hover:bg-slate-50">
+            <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Move
+          </button>
+          <button id="btn-bulk-trash"
+            class="px-2 py-1 rounded-lg bg-red-500 hover:bg-red-600 text-xs font-medium text-white shadow-sm">
+            <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Trash
+          </button>
+        </div>
+      </div>
+
+      <!-- Sidebar Footer Tools -->
+      <div id="sidebar-footer"
+        class="p-2 border-t border-slate-100 dark:border-white/[0.06] grid grid-cols-3 gap-1 text-center">
+        <button id="btn-footer-graph"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition flex flex-col items-center justify-center"
+          title="Interactive Graph View / Mind Map">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="15.5" y2="7.5"/><line x1="7.5" y1="8.5" x2="10.5" y2="15.5"/><line x1="16.5" y1="8.5" x2="13.5" y2="15.5"/></svg>
+          <span class="sidebar-label block text-[8px] mt-0.5">Graph</span>
+        </button>
+        <button id="btn-footer-stats"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition flex flex-col items-center justify-center"
+          title="Activity Heatmap & Stats">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span class="sidebar-label block text-[8px] mt-0.5">Stats</span>
+        </button>
+        <button id="btn-footer-settings"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition flex flex-col items-center justify-center"
+          title="Settings & Typography">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="2" y1="14" x2="6" y2="14"/><line x1="10" y1="8" x2="14" y2="8"/><line x1="18" y1="16" x2="22" y2="16"/></svg>
+          <span class="sidebar-label block text-[8px] mt-0.5">Settings</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ─── MAIN WORKSPACE ────────────────────────────────────────────────── -->
+    <main id="main-workspace" class="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+
+      <!-- Multi-Tab Header Bar -->
+      <div id="tabs-header-container"
+        class="hidden flex items-center border-b border-slate-200/80 dark:border-white/[0.06] bg-slate-100/70 dark:bg-[#070707] px-2 pt-1 gap-1 overflow-x-auto">
+        <!-- Open Tabs List -->
+        <div id="tabs-bar" class="flex items-center gap-1 flex-1 overflow-x-auto min-w-0"></div>
+        <button id="btn-tab-new"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-indigo-600 hover:bg-white dark:hover:bg-white/[0.08] transition text-xs shrink-0"
+          title="New Note Tab">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
+
+      <!-- App Header / Toolbar -->
+      <header id="app-header"
+        class="hidden flex items-center justify-between gap-3 px-4 sm:px-6 py-2.5 border-b border-slate-100 dark:border-white/[0.06] bg-white/90 dark:bg-black/90 backdrop-blur-md sticky top-0 z-20">
+        <!-- Left: Mobile Menu & Breadcrumbs -->
+        <div class="flex items-center gap-2 min-w-0">
+          <button id="btn-open-sidebar"
+            class="mobile-menu-btn p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.06] transition"
+            aria-label="Open Sidebar" title="Toggle Menu">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div id="editor-breadcrumbs"
+            class="flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 truncate">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span id="breadcrumb-folder">Notes</span>
+            <span class="opacity-40">/</span>
+            <span id="meta-last-edited" class="truncate">Select note</span>
+          </div>
+        </div>
+
+        <!-- Center / Right Actions: Editor Toolbar & Header Actions -->
+        <div class="editor-toolbar editor-header-actions flex items-center gap-1 sm:gap-1.5 flex-wrap justify-end">
+          <!-- Auto-save notification indicator -->
+          <div id="save-status-indicator"
+            class="hidden items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 mr-1 sm:mr-2">
+            <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="hidden sm:inline">Saved</span>
+          </div>
+
+          <!-- View Mode Toggle: Write / Split / Preview -->
+          <div id="editor-mode-switcher"
+            class="flex items-center bg-slate-100 dark:bg-white/[0.06] rounded-xl p-0.5 text-xs font-medium">
+            <button id="btn-mode-write"
+              class="px-2.5 py-1 rounded-lg text-slate-700 dark:text-white bg-white dark:bg-white/[0.12] shadow-sm transition"
+              title="Write Mode (Ctrl+Alt+1)">
+              <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="hidden sm:inline">Write</span>
+            </button>
+            <button id="btn-mode-split"
+              class="px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition"
+              title="Split Mode (Ctrl+Alt+2)">
+              <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg><span class="hidden sm:inline">Split</span>
+            </button>
+            <button id="btn-mode-preview"
+              class="px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition"
+              title="Preview Mode (Ctrl+Alt+3)">
+              <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span class="hidden sm:inline">Preview</span>
+            </button>
+          </div>
+
+          <div class="h-4 w-px bg-slate-200 dark:bg-white/[0.08] mx-0.5 hidden sm:block"></div>
+
+          <!-- Copy Markdown -->
+          <button id="btn-copy-markdown"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Copy Markdown">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+
+          <!-- Duplicate Note -->
+          <button id="btn-duplicate-note"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Duplicate Note">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+          </button>
+
+          <!-- Export .md -->
+          <button id="btn-export-md"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Export as Markdown (.md)">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="10 13 8 15 10 17"/><polyline points="14 13 16 15 14 17"/></svg>
+          </button>
+
+          <!-- Export PDF -->
+          <button id="btn-export-pdf"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Export as PDF">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+          </button>
+
+          <div class="h-4 w-px bg-slate-200 dark:bg-white/[0.08] mx-0.5 hidden sm:block"></div>
+
+          <!-- Favorite Toggle (Heart) -->
+          <button id="btn-toggle-favorite"
+            class="p-2 rounded-xl text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Toggle Favorite">
+            <span id="icon-favorite" class="inline-flex items-center justify-center"><svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+          </button>
+
+          <!-- Pin Toggle -->
+          <button id="btn-toggle-pin"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Pin to top">
+            <span id="icon-pin" class="inline-flex items-center justify-center"><svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg></span>
+          </button>
+
+          <!-- Encryption Lock Toggle -->
+          <button id="btn-toggle-lock"
+            class="p-2 rounded-xl text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Client-Side AES-256 Encryption">
+            <span id="icon-lock" class="inline-flex items-center justify-center"><svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></span>
+          </button>
+
+          <!-- Table of Contents Toggle -->
+          <button id="btn-toggle-toc"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Table of Contents Side-Dock">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+          </button>
+
+          <!-- Backlinks Toggle -->
+          <button id="btn-toggle-backlinks"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Backlinks Dock ([[wikilinks]])">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+
+          <!-- Zen Mode Toggle -->
+          <button id="btn-toggle-zen"
+            class="p-2 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition text-xs"
+            title="Zen Mode (Distraction-Free Fullscreen)">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </button>
+
+          <!-- Share Note Button -->
+          <button id="btn-share-note"
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-500/10 dark:hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-medium transition"
+            title="Share Note via Cloudflare KV">
+            <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span class="hidden md:inline">Share</span>
+          </button>
+
+          <!-- Trash Note Button -->
+          <button id="btn-trash-note"
+            class="p-2 rounded-xl text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition text-xs"
+            title="Move to Trash">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Trash Banner (Shown when viewing note from Trash) -->
+      <div id="trash-banner"
+        class="hidden items-center justify-between gap-3 px-5 sm:px-8 py-2.5 bg-amber-500/10 border-b border-amber-500/20 text-amber-800 dark:text-amber-300 text-xs">
+        <div class="flex items-center gap-2">
+          <svg class="lucide-svg w-4 h-4 text-amber-500" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>This note is in <strong>Trash</strong>. Auto-purges after 30 days.</span>
+          <span id="trash-days-left" class="font-mono bg-amber-500/20 px-2 py-0.5 rounded text-[10px]">29 days
+            left</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-banner-restore"
+            class="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 font-medium transition">
+            <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>Restore
+          </button>
+          <button id="btn-banner-perm-delete"
+            class="px-3 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-600 dark:text-red-400 font-medium transition">
+            <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Delete Forever
+          </button>
+        </div>
+      </div>
+
+      <!-- Editor Body Container -->
+      <div id="editor-body-container" class="flex-1 flex overflow-hidden relative">
+
+        <!-- Main Scrolling Content Area -->
+        <div id="editor-scroll" class="flex-1 overflow-y-auto relative flex flex-col">
+
+          <!-- Home Dashboard View (Shown when logo clicked or no note active) -->
+          <div id="home-view" class="flex-1 p-5 sm:p-8 overflow-y-auto">
+            <div class="max-w-6xl mx-auto space-y-6">
+              <!-- Home View Header -->
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-white/[0.06]">
+                <div class="flex items-start gap-2.5">
+                  <button id="btn-mobile-menu" type="button"
+                    class="mobile-menu-btn p-2 rounded-xl bg-white dark:bg-[#111113] border border-slate-200/80 dark:border-white/[0.08] text-slate-600 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 shadow-xs transition shrink-0 mt-0.5"
+                    aria-label="Toggle Sidebar Menu" title="Menu">
+                    <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                  </button>
+                  <div>
+                    <h2 id="home-title"
+                      class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                      <svg class="lucide-svg w-5 h-5 text-amber-500" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                      <span>All Notes</span>
+                    </h2>
+                    <p id="home-subtitle" class="text-xs text-slate-400 mt-1">Browse, search, and manage your private
+                      markdown workspace</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <div class="relative w-full sm:w-56">
+                    <svg class="lucide-svg w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input id="home-search-input" type="text" placeholder="Search notes…"
+                      class="w-full pl-8 pr-3 py-1.5 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-transparent focus:border-indigo-400 text-xs text-slate-800 dark:text-slate-100 outline-none transition" />
+                  </div>
+                  <button id="btn-home-new-note"
+                    class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium shadow-sm transition shrink-0">
+                    <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Note
+                  </button>
+                  <button id="btn-empty-trash"
+                    class="hidden items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-red-500 hover:bg-red-600 disabled:opacity-40 disabled:pointer-events-none text-white text-xs font-medium shadow-sm transition shrink-0"
+                    title="Permanently delete all notes in Trash">
+                    <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    <span>Empty Trash</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Notes Grid -->
+              <div id="home-notes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5"></div>
+            </div>
+          </div>
+
+          <!-- Active Editor Wrapper -->
+          <div id="editor-wrapper" class="hidden flex-1 flex flex-col h-full relative">
+
+            <!-- Lock Screen Overlay (For AES-256 Encrypted Note) -->
+            <div id="lock-screen-overlay" class="lock-screen-overlay hidden">
+              <div
+                class="max-w-sm w-full bg-white dark:bg-[#111111] border border-slate-200 dark:border-white/[0.08] rounded-2xl p-6 shadow-2xl text-center space-y-4">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mx-auto text-xl">
+                  <svg class="lucide-svg w-5 h-5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold text-slate-900 dark:text-white">Note is Encrypted</h3>
+                  <p class="text-xs text-slate-400 mt-1">Protected with client-side AES-256-GCM. Enter your decryption
+                    passphrase to unlock.</p>
+                </div>
+                <div class="space-y-2">
+                  <input id="input-unlock-password" type="password" placeholder="Passphrase…"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-sm text-slate-800 dark:text-slate-100 outline-none focus:border-indigo-500 transition" />
+                  <p id="unlock-error-msg" class="text-[11px] text-red-500 hidden">Incorrect passphrase. Verification
+                    failed.</p>
+                </div>
+                <div class="flex gap-2">
+                  <button id="btn-unlock-cancel"
+                    class="flex-1 py-2 rounded-xl text-xs font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition">Cancel</button>
+                  <button id="btn-unlock-confirm"
+                    class="flex-1 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium shadow-md shadow-indigo-600/20 transition">Unlock
+                    Note</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Note Header: Title & Tags -->
+            <div class="editor-meta px-6 sm:px-12 pt-3 pb-1 shrink-0">
+              <!-- Note Title Input -->
+              <input id="note-title" type="text" placeholder="Untitled Note"
+                class="w-full text-2xl sm:text-4xl font-bold bg-transparent border-none outline-none text-slate-900 dark:text-white placeholder:text-slate-300 dark:placeholder:text-slate-700 leading-tight tracking-tight"
+                autocomplete="off" />
+
+              <!-- Tags Area -->
+              <div class="tags-container flex flex-wrap items-center gap-1.5 mt-1.5 text-xs">
+                <div id="tags-pills-container" class="contents"></div>
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-100 dark:bg-white/[0.05] text-slate-400 text-[11px]">
+                  <svg class="lucide-svg w-3 h-3" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+                  <input id="tag-input" type="text" placeholder="Add tag + Enter…"
+                    class="bg-transparent border-none outline-none text-slate-700 dark:text-slate-300 placeholder:text-slate-400 w-24 text-[11px]" />
+                </div>
+              </div>
+
+              <div class="editor-divider mt-2 h-px bg-slate-100 dark:bg-white/[0.06]"></div>
+            </div>
+
+            <!-- Editor Work Area Container: Supports Write / Split / Preview -->
+            <div id="editor-canvas-container" class="flex-1 relative overflow-hidden flex flex-col">
+
+              <!-- WRITE MODE & SPLIT MODE: Textarea & Gutter -->
+              <div id="editor-write-pane" class="flex-1 flex overflow-hidden">
+                <div class="editor-gutter-wrapper flex-1">
+                  <!-- Line numbers gutter -->
+                  <div id="editor-line-numbers" class="line-numbers hidden sm:block">1</div>
+                  <!-- Content Textarea -->
+                  <textarea id="note-content"
+                    placeholder="Start typing your thoughts in Markdown… (Use [[Note Title]] for wiki backlinks)"
+                    class="editor-textarea flex-1 p-0 pl-4 pr-4 sm:pr-6 bg-transparent border-none outline-none text-slate-800 dark:text-slate-200 overflow-y-auto"></textarea>
+                </div>
+              </div>
+
+              <!-- PREVIEW PANE (Shown in Split or Preview mode) -->
+              <div id="editor-preview-pane"
+                class="hidden flex-1 overflow-y-auto p-6 sm:p-10 border-l border-slate-200/60 dark:border-white/[0.06]">
+                <div id="markdown-preview" class="markdown-body max-w-3xl mx-auto"></div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- TOC Side-Dock -->
+        <aside id="toc-dock" class="toc-dock dock-hidden flex flex-col p-4 overflow-y-auto shrink-0 select-none">
+          <div
+            class="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            <span>Outline</span>
+            <button id="btn-close-toc" class="hover:text-slate-700 dark:hover:text-slate-200">
+              <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div id="toc-list" class="space-y-1"></div>
+        </aside>
+
+        <!-- Backlinks Side-Dock -->
+        <aside id="backlinks-dock" class="toc-dock dock-hidden flex flex-col p-4 overflow-y-auto shrink-0 select-none">
+          <div
+            class="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            <span>Backlinks</span>
+            <button id="btn-close-backlinks" class="hover:text-slate-700 dark:hover:text-slate-200">
+              <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <p class="text-[11px] text-slate-400 mb-2">Notes referencing this note via <code
+              class="text-indigo-500">[[wikilinks]]</code>:</p>
+          <div id="backlinks-list" class="space-y-1.5"></div>
+        </aside>
+
+      </div>
+
+      <!-- Status Bar -->
+      <footer id="status-bar"
+        class="hidden flex items-center justify-between px-5 py-2 border-t border-slate-100 dark:border-white/[0.06] bg-white dark:bg-[#070707] text-[11px] text-slate-400 dark:text-slate-500 select-none">
+        <div class="flex items-center gap-3">
+          <span id="stat-words">0 words</span>
+          <span class="opacity-30">•</span>
+          <span id="stat-chars">0 characters</span>
+          <span class="opacity-30">•</span>
+          <span id="stat-reading-time">0 min read</span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <!-- Daily Word Count Goal Progress -->
+          <div id="word-goal-container" class="hidden sm:flex items-center gap-2">
+            <span class="text-[10px] text-slate-400">Goal: <span id="goal-progress-text">0/500</span></span>
+            <div class="w-16 h-1.5 bg-slate-200 dark:bg-white/[0.1] rounded-full overflow-hidden">
+              <div id="goal-progress-bar" class="h-full bg-indigo-500 rounded-full transition-all duration-300"
+                style="width: 0%"></div>
+            </div>
+          </div>
+          <!-- Line / Column indicator -->
+          <span id="stat-cursor-pos" class="font-mono text-[10px]">Ln 1, Col 1</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ═══ FLOATING ZEN MODE EXIT BUTTON ═════════════════════════════════════ -->
+  <button id="btn-exit-zen"
+    class="hidden px-3.5 py-1.5 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white backdrop-blur-md shadow-lg text-xs font-medium border border-white/10"
+    title="Exit Zen Mode (Esc)">
+    <svg class="lucide-svg w-3.5 h-3.5 mr-1.5" viewBox="0 0 24 24"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Exit Zen (Esc)
+  </button>
+
+  <!-- ═══ COMMAND PALETTE MODAL (Ctrl+K) ════════════════════════════════════ -->
+  <div id="cmd-palette-modal"
+    class="fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden flex flex-col max-h-[75vh]">
+      <!-- Search Input -->
+      <div class="flex items-center px-4 py-3 border-b border-slate-100 dark:border-white/[0.06] gap-3">
+        <svg class="lucide-svg w-4 h-4 text-slate-400" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="cmd-palette-input" type="text" placeholder="Type a command or search notes…"
+          class="flex-1 bg-transparent border-none outline-none text-sm text-slate-800 dark:text-slate-100 placeholder:text-slate-400"
+          autocomplete="off" />
+        <kbd id="btn-cmd-palette-esc" role="button" tabindex="0" title="Close (Esc)"
+          class="px-2 py-0.5 rounded text-[10px] bg-slate-100 dark:bg-white/[0.08] text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-mono cursor-pointer select-none">ESC</kbd>
+      </div>
+      <!-- Results List -->
+      <div id="cmd-palette-results" class="flex-1 overflow-y-auto p-2 space-y-1"></div>
+      <div
+        class="px-4 py-2 bg-slate-50 dark:bg-white/[0.02] border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-between text-[11px] text-slate-400">
+        <span>Use <kbd class="px-1 rounded bg-slate-200/60 dark:bg-white/[0.08] font-mono">↑</kbd> <kbd
+            class="px-1 rounded bg-slate-200/60 dark:bg-white/[0.08] font-mono">↓</kbd> to navigate</span>
+        <span>Press <kbd class="px-1 rounded bg-slate-200/60 dark:bg-white/[0.08] font-mono">↵</kbd> to select</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ INTERACTIVE GRAPH VIEW / MIND MAP MODAL ═══════════════════════════ -->
+  <div id="graph-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/50 dark:bg-black/80 backdrop-blur-md hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#0c0c0c] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative">
+      <!-- Graph Header -->
+      <div
+        class="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 dark:border-white/[0.06] bg-slate-50/50 dark:bg-white/[0.02]">
+        <div class="flex items-center gap-2.5">
+          <div class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xs">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="15.5" y2="7.5"/><line x1="7.5" y1="8.5" x2="10.5" y2="15.5"/><line x1="16.5" y1="8.5" x2="13.5" y2="15.5"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-slate-900 dark:text-white">PureNotes Graph Mind Map</h3>
+            <p class="text-[11px] text-slate-400">Force-directed simulation of note wikilinks and shared tags</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btn-graph-reset"
+            class="px-2.5 py-1 rounded-lg text-xs bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.1] text-slate-600 dark:text-slate-300">
+            <svg class="lucide-svg w-3 h-3 mr-1" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>Reset
+          </button>
+          <button id="btn-close-graph"
+            class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Graph Canvas -->
+      <div class="flex-1 relative overflow-hidden bg-slate-50 dark:bg-[#050505]">
+        <canvas id="graph-canvas"></canvas>
+        <div
+          class="absolute bottom-3 left-4 text-[11px] text-slate-400 bg-white/70 dark:bg-black/70 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-white/[0.06]">
+          Tip: Drag nodes to explore. Click a node to open note.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY HEATMAP & STATS DASHBOARD MODAL ══════════════════════════ -->
+  <div id="stats-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-lg p-6 space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-sm">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-white">PureNotes Analytics</h3>
+            <p class="text-xs text-slate-400">Activity, streaks, and note statistics</p>
+          </div>
+        </div>
+        <button id="btn-close-stats"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-4 gap-2 text-center">
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04]">
+          <span id="stat-total-notes" class="block text-lg font-bold text-slate-900 dark:text-white">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Notes</span>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04]">
+          <span id="stat-total-words" class="block text-lg font-bold text-slate-900 dark:text-white">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Words</span>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04]">
+          <span id="stat-total-folders" class="block text-lg font-bold text-slate-900 dark:text-white">0</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Folders</span>
+        </div>
+        <div class="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04]">
+          <span id="stat-day-streak" class="block text-lg font-bold text-amber-500">🔥 1</span>
+          <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Streak</span>
+        </div>
+      </div>
+
+      <!-- 14-Day Activity Heatmap -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300 font-medium">
+          <span>14-Day Activity Heatmap</span>
+          <span class="text-[11px] text-slate-400">Past two weeks</span>
+        </div>
+        <div id="activity-heatmap"
+          class="heatmap-grid p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-100 dark:border-white/[0.04]">
+        </div>
+        <div class="flex items-center justify-end gap-1.5 text-[10px] text-slate-400 pt-1">
+          <span>Less</span>
+          <div class="w-2.5 h-2.5 rounded heatmap-cell level-0"></div>
+          <div class="w-2.5 h-2.5 rounded heatmap-cell level-1"></div>
+          <div class="w-2.5 h-2.5 rounded heatmap-cell level-2"></div>
+          <div class="w-2.5 h-2.5 rounded heatmap-cell level-3"></div>
+          <div class="w-2.5 h-2.5 rounded heatmap-cell level-4"></div>
+          <span>More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SETTINGS MODAL ════════════════════════════════════════════════════ -->
+  <div id="settings-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-md p-6 space-y-5">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-semibold text-slate-900 dark:text-white">PureNotes Preferences</h3>
+        <button id="btn-close-settings"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Typography Choice -->
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Editor Typography</label>
+        <select id="setting-font-family"
+          class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-200">
+          <option value="'Inter', sans-serif">Inter (Modern & Clean)</option>
+          <option value="'Outfit', sans-serif">Outfit (Geometric & Elegant)</option>
+          <option value="'Montserrat', sans-serif">Montserrat (Bold & Editorial)</option>
+          <option value="'Fira Code', monospace">Fira Code (Developer Monospace)</option>
+        </select>
+      </div>
+
+      <!-- Font Size -->
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Editor Font Size</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button data-size="14px"
+            class="btn-font-size px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/[0.08] text-xs">Small
+            (14px)</button>
+          <button data-size="16px"
+            class="btn-font-size px-3 py-1.5 rounded-lg border border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 text-xs font-semibold">Medium
+            (16px)</button>
+          <button data-size="18px"
+            class="btn-font-size px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/[0.08] text-xs">Large
+            (18px)</button>
+        </div>
+      </div>
+
+      <!-- Line Numbers Toggle -->
+      <div class="flex items-center justify-between pt-1">
+        <div>
+          <span class="text-xs font-medium text-slate-800 dark:text-slate-200 block">Editor Line Numbers</span>
+          <span class="text-[11px] text-slate-400">Display scroll-synced line numbers gutter</span>
+        </div>
+        <input id="setting-line-numbers" type="checkbox" checked class="w-4 h-4 text-indigo-600 rounded" />
+      </div>
+
+      <!-- Daily Word Count Goal -->
+      <div class="space-y-1.5 pt-1">
+        <label class="text-xs font-medium text-slate-600 dark:text-slate-300">Daily Word Count Target</label>
+        <div class="flex items-center gap-2">
+          <input id="setting-word-goal" type="number" value="500" min="50" step="50"
+            class="w-28 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs" />
+          <span class="text-xs text-slate-400">words / day</span>
+        </div>
+      </div>
+
+      <!-- Data & Backups Section -->
+      <div class="pt-3 border-t border-slate-100 dark:border-white/[0.06] space-y-3">
+        <div class="space-y-1">
+          <h4 class="text-xs font-semibold text-slate-800 dark:text-slate-200">Data &amp; Backups</h4>
+          <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+            Export a complete encrypted JSON backup of your notes, folders, and workspace preferences.
+          </p>
+          <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+            Import your notes from DevNotes or other apps (Supports .json, .md, .txt files).
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btn-settings-export-vault"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.1] text-slate-800 dark:text-slate-100 text-xs font-medium transition">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Export JSON</span>
+          </button>
+          <button id="btn-settings-import-notes"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/25 text-xs font-medium transition">
+            <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Import Notes</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Privacy & Terms Links -->
+      <div
+        class="pt-2 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-center gap-3 text-[11px] text-slate-400">
+        <a href="/privacy" class="hover:text-amber-500 hover:underline transition">Privacy Policy</a>
+        <span class="opacity-40">•</span>
+        <a href="/terms" class="hover:text-amber-500 hover:underline transition">Terms of Service</a>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-2 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-end">
+        <button id="btn-settings-save"
+          class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium transition">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FOLDER CREATION / RENAME MODAL ════════════════════════════════════ -->
+  <div id="folder-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-sm p-6 space-y-4">
+      <h3 id="folder-modal-title" class="text-base font-semibold text-slate-900 dark:text-white">Create Folder</h3>
+      <div class="space-y-2">
+        <label class="text-xs text-slate-400">Folder Name</label>
+        <input id="folder-name-input" type="text" placeholder="e.g. Work Projects"
+          class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-100 outline-none focus:border-indigo-500" />
+      </div>
+      <div class="space-y-2">
+        <label class="text-xs text-slate-400">Parent Folder (Optional)</label>
+        <select id="folder-parent-select"
+          class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-100">
+          <option value="">None (Top Level)</option>
+        </select>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button id="btn-cancel-folder"
+          class="px-3 py-1.5 rounded-xl text-xs text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05]">Cancel</button>
+        <button id="btn-save-folder"
+          class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ENCRYPTION SETUP / REMOVE MODAL ═══════════════════════════════════ -->
+  <div id="encrypt-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-sm p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
+          <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3 id="encrypt-modal-title" class="text-base font-semibold text-slate-900 dark:text-white">Note Security</h3>
+      </div>
+      <p id="encrypt-modal-desc" class="text-xs text-slate-400">Set a passphrase to encrypt this note with client-side
+        AES-256. Only you can unlock it.</p>
+      <div class="space-y-3">
+        <input id="encrypt-pass-input" type="password" placeholder="Passphrase…"
+          class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-100 outline-none" />
+        <input id="encrypt-pass-confirm" type="password" placeholder="Confirm Passphrase…"
+          class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-100 outline-none" />
+      </div>
+      <div class="flex items-center justify-between pt-2">
+        <button id="btn-remove-encryption" class="hidden text-xs text-red-500 hover:underline">Remove
+          Encryption</button>
+        <div class="flex gap-2 ml-auto">
+          <button id="btn-cancel-encrypt"
+            class="px-3 py-1.5 rounded-xl text-xs text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05]">Cancel</button>
+          <button id="btn-save-encrypt"
+            class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium">Encrypt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SHARE CREATION / INFO MODAL ═══════════════════════════════════════ -->
+  <div id="shareModal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#121212] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl w-full max-w-md p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-sm">
+            <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Share Note</h3>
+            <p class="text-xs text-slate-400">Cloudflare Pages Functions link</p>
+          </div>
+        </div>
+        <button id="btn-close-share-modal"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-slate-500 dark:text-slate-400">Shareable URL</label>
+        <div class="flex items-center gap-2">
+          <input id="share-modal-url" type="text" readonly
+            class="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.05] border border-slate-200 dark:border-white/[0.08] text-xs text-slate-800 dark:text-slate-100 font-mono outline-none select-all" />
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-2">
+        <span class="text-[11px] text-slate-400">Changes sync automatically</span>
+        <div class="flex items-center gap-2">
+          <button id="btn-share-open"
+            class="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-white/[0.08] hover:bg-slate-50 dark:hover:bg-white/[0.06] text-xs font-medium text-slate-700 dark:text-slate-200 transition">
+            <svg class="lucide-svg w-3 h-3 mr-1.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open
+          </button>
+          <button id="btn-share-copy"
+            class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium shadow-sm transition">
+            <svg class="lucide-svg w-3 h-3 mr-1.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FULLSCREEN SHARED NOTE VIEWER (Pure Read-Only Aesthetic) ══════════ -->
+  <div id="sharedNoteModal" class="hidden min-h-screen bg-[#f6f6f4] dark:bg-[#09090b] text-slate-800 dark:text-slate-100" role="dialog" aria-modal="true" aria-label="Shared Note Reader">
+    <!-- Top Navigation Bar -->
+    <header
+      class="flex items-center justify-between px-6 py-3.5 border-b border-slate-200/80 dark:border-white/[0.08] bg-white/85 dark:bg-[#0c0c0e]/85 backdrop-blur-md sticky top-0 z-30 select-none">
+      <!-- Left: PureNotes Animated Logo & Brand Text Wrapped in Anchor to Root (href="/") -->
+      <div class="flex items-center gap-3">
+        <a href="/" id="shared-brand-link"
+          class="flex items-center gap-2.5 cursor-pointer select-none group focus:outline-none"
+          title="PureNotes — Return to Workspace">
+          <div class="logo transition">
+            <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4.5" y="3.5" width="15" height="17" rx="2.5" stroke="currentColor" stroke-width="1.75" />
+              <line x1="8" y1="8.5" x2="15" y2="8.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+              <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+              <rect class="logo-cursor" x="13.8" y="10.8" width="2" height="3.4" rx="0.6" fill="var(--accent-primary)" />
+              <line x1="8" y1="16.5" x2="11" y2="16.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+                opacity="0.55" />
+            </svg>
+          </div>
+          <span class="text-sm font-semibold tracking-tight text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">PureNotes</span>
+        </a>
+        <span
+          class="text-[10px] font-medium text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/25">Shared Note</span>
+      </div>
+
+      <!-- Right: Save to My Notes & Premium SVG Sun/Moon Theme Toggle -->
+      <div class="flex items-center gap-2">
+        <button id="btn-save-shared-note"
+          class="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600 text-white dark:text-zinc-950 text-xs font-medium shadow-sm transition inline-flex items-center gap-1.5">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+            <polyline points="17 21 17 13 7 13 7 21" />
+            <polyline points="7 3 7 8 15 8" />
+          </svg>
+          <span>Save to My Notes</span>
+        </button>
+        <button id="btn-shared-theme"
+          class="theme-toggle-btn relative flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition"
+          aria-label="Toggle Dark / Light Theme" title="Toggle Theme (Light / OLED Dark)">
+          <svg id="shared-theme-icon-sun" class="theme-svg-icon sun-icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg id="shared-theme-icon-moon" class="theme-svg-icon moon-icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Center Content: Clean Reader Interface Centered on Screen -->
+    <main class="flex-1 overflow-y-auto px-4 sm:px-6 py-10 sm:py-14">
+      <article class="max-w-3xl mx-auto bg-white dark:bg-[#111113] border border-slate-200/80 dark:border-white/[0.06] rounded-2xl shadow-sm p-6 sm:p-10 space-y-6">
+        <header class="space-y-3 border-b border-slate-200/80 dark:border-white/[0.08] pb-5">
+          <h1 id="shared-note-title"
+            class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white leading-tight tracking-tight">Loading shared note…</h1>
+          <div id="shared-note-tags" class="flex flex-wrap gap-1.5"></div>
+        </header>
+        <div id="shared-note-body" class="markdown-body min-h-[160px]"></div>
+      </article>
+    </main>
+  </div>
+
+  <!-- ═══ DELETE CONFIRMATION MODAL ═════════════════════════════════════════ -->
+  <div id="delete-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 dark:bg-black/70 backdrop-blur-sm hidden"
+    role="dialog" aria-modal="true">
+    <div
+      class="bg-white dark:bg-[#141414] rounded-2xl shadow-2xl w-full max-w-sm p-6 space-y-4 border border-slate-200 dark:border-white/[0.08]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-500/15 text-red-500 flex items-center justify-center">
+          <svg class="lucide-svg w-4 h-4" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+        <h3 id="modal-delete-title" class="text-base font-semibold text-slate-900 dark:text-white">Move to Trash?</h3>
+      </div>
+      <p id="modal-delete-desc" class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+        You can restore this note anytime within 30 days from Trash.
+      </p>
+      <div class="flex items-center justify-end gap-2 pt-1">
+        <button id="btn-cancel-modal-delete"
+          class="px-4 py-2 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition">
+          Cancel
+        </button>
+        <button id="btn-confirm-modal-delete"
+          class="px-4 py-2 rounded-xl text-xs font-medium text-white bg-red-500 hover:bg-red-600 transition">
+          Move to Trash
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DRAG & DROP FILE IMPORT OVERLAY ═══════════════════════════════════ -->
+  <div id="drop-overlay">
+    <div
+      class="text-center p-8 bg-white dark:bg-[#121212] border-2 border-dashed border-indigo-500 rounded-3xl shadow-2xl space-y-3 pointer-events-none">
+      <svg class="lucide-svg w-10 h-10 text-amber-500 mx-auto animate-bounce" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Drop to Import</h3>
+      <p class="text-xs text-slate-400">Release .md, .txt, or PureNotes .json vault backup files to import.</p>
+    </div>
+  </div>
+
+  <!-- ═══ TOAST CONTAINER ═══════════════════════════════════════════════════ -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[80] flex flex-col items-end gap-2 pointer-events-none">
+  </div>
+
+  <!-- Hidden File Input for Vault / Note Import -->
+  <input id="hidden-file-input" type="file" multiple accept=".json, .md, .txt" class="hidden" />
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+          navigator.serviceWorker.register('sw.js').catch(() => {});
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

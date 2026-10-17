@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PureNotes</title>
+  <meta name="description" content="Privacy Policy for PureNotes: A private, local-first markdown workspace with zero tracking, zero ads, and client-side storage.">
+  <meta name="theme-color" content="#18181b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect width='24' height='24' rx='6' fill='%2318181b'/%3E%3Crect x='5' y='4' width='14' height='16' rx='2.5' fill='%2327272a' stroke='%23f59e0b' stroke-width='1.6'/%3E%3Cline x1='8' y1='8.5' x2='15' y2='8.5' stroke='%23f4f4f5' stroke-width='1.6' stroke-linecap='round'/%3E%3Cline x1='8' y1='12' x2='12.5' y2='12' stroke='%23a1a1aa' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='14.2' y='10.6' width='1.8' height='3' rx='0.6' fill='%23f59e0b'/%3E%3Cline x1='8' y1='15.5' x2='13' y2='15.5' stroke='%2371717a' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Inter, Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['Fira Code', 'Consolas', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Prevent FOUC: apply saved theme before paint -->
+  <script>
+    (function(){
+      const savedTheme = localStorage.getItem('workspace_theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- PureNotes Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="!block !h-auto !overflow-y-auto min-h-full bg-[#f6f6f4] dark:bg-[#09090b] text-slate-800 dark:text-slate-100 antialiased selection:bg-amber-500/20 selection:text-amber-700 dark:selection:bg-amber-500/30 dark:selection:text-amber-300 flex flex-col">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-md sticky top-0 z-30 select-none">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="logo transition">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4.5" y="3.5" width="15" height="17" rx="2.5" stroke="currentColor" stroke-width="1.75" />
+            <line x1="8" y1="8.5" x2="15" y2="8.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            <line x1="8" y1="12.5" x2="12" y2="12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            <rect class="logo-cursor" x="13.8" y="10.8" width="2" height="3.4" rx="0.6" fill="var(--accent-primary)" />
+            <line x1="8" y1="16.5" x2="11" y2="16.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" opacity="0.55" />
+          </svg>
+        </div>
+        <span class="text-sm font-semibold tracking-tight text-slate-900 dark:text-white">PureNotes</span>
+        <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500 hidden sm:inline">/ Privacy</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="/" class="text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/[0.06] transition flex items-center gap-1.5">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+          <span>Back to Notes</span>
+        </a>
+        <button id="btn-theme-toggle" class="theme-toggle-btn relative flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-white/[0.08] transition" aria-label="Toggle Theme" title="Toggle Theme">
+          <svg id="theme-icon-sun" class="theme-svg-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg id="theme-icon-moon" class="theme-svg-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-6 py-12 sm:py-16">
+    <article class="space-y-10">
+      
+      <!-- Document Header -->
+      <header class="space-y-3 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-500/20">
+          <svg class="lucide-svg w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          <span>Zero Cloud • Zero Tracking</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Privacy Policy
+        </h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400">
+          Last Updated: October 2026 • Effective Date: October 2026
+        </p>
+      </header>
+
+      <!-- Summary Card -->
+      <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/25 space-y-2">
+        <h2 class="text-sm font-semibold text-amber-900 dark:text-amber-200 flex items-center gap-2">
+          <svg class="lucide-svg w-4 h-4 text-amber-600 dark:text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          The PureNotes Privacy Promise
+        </h2>
+        <p class="text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+          PureNotes is engineered as a local-first application. We do not require an account, we do not operate a centralized user database, we do not employ analytics or tracking scripts, and we never view, process, or sell your notes. Your thoughts are purely yours.
+        </p>
+      </div>
+
+      <!-- Policy Sections -->
+      <div class="space-y-8 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+        
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            1. Local-First Architecture &amp; Storage
+          </h2>
+          <p>
+            All notes, folder hierarchies, tags, and workspace configurations created in PureNotes are stored entirely on your device inside your browser's local storage (<code class="text-xs font-mono bg-slate-100 dark:bg-white/[0.08] px-1.5 py-0.5 rounded">localStorage</code> and IndexedDB).
+          </p>
+          <p>
+            At no point is your content transmitted to any remote servers, cloud infrastructure, or third-party storage during typical creation, editing, or deletion workflows.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            2. When Data Leaves Your Device (Voluntary Sharing)
+          </h2>
+          <p>
+            Your data leaves your device <strong>only and exclusively</strong> when you explicitly click the <strong>"Share"</strong> button to generate a public share link:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 pl-2 text-slate-600 dark:text-slate-300">
+            <li>
+              <strong>Serverless Share Endpoint (<code class="text-xs font-mono bg-slate-100 dark:bg-white/[0.08] px-1.5 py-0.5 rounded">/api/share</code>):</strong> When you choose to share a note, only the specific note title, markdown content, and tags for that individual note are transmitted to Cloudflare Pages Functions and stored in Cloudflare KV under a randomly generated key.
+            </li>
+            <li>
+              <strong>Offline Hash Sharing Fallback:</strong> If the network request is unavailable, the shared note payload is encoded entirely into the URL fragment hash (<code class="text-xs font-mono bg-slate-100 dark:bg-white/[0.08] px-1.5 py-0.5 rounded">#share=...</code>). In this mode, zero data reaches any server; the note is decoded directly in the recipient's browser.
+            </li>
+            <li>
+              <strong>Encrypted Notes Protection:</strong> Notes secured with client-side AES-256 encryption are never synced or uploaded to public share endpoints unless you explicitly decrypt and share them.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            3. Client-Side Cryptographic Security
+          </h2>
+          <p>
+            When you apply encryption to a note, PureNotes uses the browser's native Web Cryptography API (<code class="text-xs font-mono bg-slate-100 dark:bg-white/[0.08] px-1.5 py-0.5 rounded">crypto.subtle</code>) with AES-256-GCM and PBKDF2 key derivation (100,000 iterations).
+          </p>
+          <p>
+            Your passphrase is never sent over any network and is never stored anywhere on disk. Only the cryptographic ciphertext, initialization vector (IV), and salt are written to your browser's storage. If you lose your passphrase, neither we nor any third party can recover your encrypted notes.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            4. Zero Tracking, Analytics, and Advertising
+          </h2>
+          <p>
+            We respect your privacy unconditionally:
+          </p>
+          <ul class="list-disc list-inside space-y-1 pl-2">
+            <li><strong>No Tracking Scripts:</strong> We do not use Google Analytics, Plausible, Mixpanel, Hotjar, or any visitor tracking technologies.</li>
+            <li><strong>No Cookies:</strong> PureNotes sets no tracking or marketing cookies.</li>
+            <li><strong>No Advertisements:</strong> There are no advertising banners, sponsored content, or ad-tech SDKs.</li>
+            <li><strong>No Fingerprinting:</strong> We do not collect device identifiers, IP logs, or behavioral telemetry.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            5. Third-Party CDNs
+          </h2>
+          <p>
+            To deliver an optimal, lightweight standalone experience, PureNotes loads open-source libraries (Tailwind CSS, Marked.js, DOMPurify, Skulpt) and web fonts via public content delivery networks (Google Fonts, Cloudflare CDNJS, jsDelivr). These CDNs may log standard technical HTTP connection metadata (such as IP addresses and browser user-agent) in accordance with their respective privacy policies.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            6. Data Ownership, Backups &amp; Deletion
+          </h2>
+          <p>
+            You retain absolute, exclusive ownership of your data at all times. Because all data is housed on your local machine, you have complete authority to:
+          </p>
+          <ul class="list-disc list-inside space-y-1 pl-2">
+            <li><strong>Export Full Vaults:</strong> Create portable JSON backups of your notes, folders, and preferences at any time from Settings.</li>
+            <li><strong>Export Individual Files:</strong> Save notes as standard <code class="text-xs font-mono bg-slate-100 dark:bg-white/[0.08] px-1.5 py-0.5 rounded">.md</code> or printable PDF files.</li>
+            <li><strong>Permanently Delete:</strong> Clear your browser's site data or delete individual notes to instantly remove them from your device.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-white">
+            7. Contact &amp; Changes
+          </h2>
+          <p>
+            Because PureNotes does not store personal accounts or cloud credentials, this Privacy Policy remains simple and steadfast. Any updates will be reflected directly on this page with an updated revision date.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Footer Navigation Links -->
+      <footer class="pt-8 border-t border-slate-200/80 dark:border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div class="flex items-center gap-4">
+          <a href="/" class="hover:text-amber-500 transition">PureNotes App</a>
+          <span>•</span>
+          <a href="/terms" class="hover:text-amber-500 transition">Terms of Service</a>
+        </div>
+        <p>© 2026 PureNotes. Completely private, local-first workspace.</p>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- Synchronized Premium SVG Theme Toggle Script -->
+  <script>
+    const themeBtn = document.getElementById('btn-theme-toggle');
+
+    function updateThemeBtnLabel(isDark) {
+      if (themeBtn) {
+        const label = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        themeBtn.setAttribute('aria-label', label);
+        themeBtn.setAttribute('title', label);
+      }
+    }
+
+    updateThemeBtnLabel(document.documentElement.classList.contains('dark'));
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.add('theme-transition');
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('workspace_theme', isDark ? 'dark' : 'light');
+        updateThemeBtnLabel(isDark);
+        setTimeout(() => {
+          document.documentElement.classList.remove('theme-transition');
+        }, 450);
+      });
+    }
+  </script>
+</body>
+</html>
